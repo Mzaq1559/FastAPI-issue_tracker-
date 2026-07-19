@@ -1,30 +1,5 @@
 from fastapi import FastAPI
+from app.routes.issues import router as issues_router
 
 app = FastAPI()
-
-items = [
-    {"id":1, "name": "item one"},
-    {"id":2, "name": "item two"},
-    {"id":3, "name": "item three"},
-    {"id":4, "name": "item four"},
-
-]
-@app.get("/health")
-def health_check():
-    return {"status" : "ok"}
-
-@app.get("/items")
-def get_items():
-    return items;
-
-@app.get("/items/{item_id}")
-def get_item_by_id(item_id: int):
-    for item in items:
-        if item["id"] == item_id:
-            return item
-    return {"error": "item not found"}
-
-@app.post("/items")
-def create_items(item: dict):
-    items.append(item)
-    return item
+app.include_router(issues_router)
