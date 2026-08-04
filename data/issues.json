@@ -1,12 +1,5 @@
 [
   {
-    "id": "d44d7185-893f-4587-ae53-cf73cd73029c",
-    "title": "life",
-    "description": "long",
-    "priority": "low",
-    "status": "open"
-  },
-  {
     "id": "5a0e5646-3e51-4fca-bd2b-13ad378fef51",
     "title": "test issue",
     "description": "this is a test issue",
